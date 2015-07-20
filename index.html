@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    function roman(){
+      var number = document.getElementById(number);
+      var roman = convert(number);
+      document.getElementById('output').innerHtml = roman;
+
+    }
+  </script>
+</head>
+<body>
+  <label for="number">Enter Integer</label>
+  <input type="text" id="number">
+  <input type="button" value="Submit" onlick="roman">
+  <div id="output"></div>
+</body>
+</html>
