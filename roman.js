@@ -1,9 +1,13 @@
-function convert(num) { 
-  if(num < 1){ return "";}
-  if(num >= 40){ return "XL" + convert(num - 40);}
-  if(num >= 10){ return "X" + convert(num - 10);}
-  if(num >= 9){ return "IX" + convert(num - 9);}
-  if(num >= 5){ return "V" + convert(num - 5);}
-  if(num >= 4){ return "IV" + convert(num - 4);}
-  if(num >= 1){ return "I" + convert(num - 1);}  
+function convert(num) {
+    if (!+num)
+        return false;
+    var digits = String(+num).split(""),
+        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+               "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+               "","I","II","III","IV","V","VI","VII","VIII","IX"],
+        roman = "",
+        i = 3;
+    while (i--)
+        roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+    return Array(+digits.join("") + 1).join("M") + roman;
 }
