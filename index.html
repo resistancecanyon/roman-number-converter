@@ -6,7 +6,7 @@
   <script src="roman.js" type="text/javascript" ></script>
   <script>
     function roman(){
-      var number = document.getElementById(number);
+      var number = document.getElementById('number').val();
       var roman = convert(number);
       document.getElementById('output').innerHtml = roman;
 
@@ -16,7 +16,7 @@
 <body>
   <label for="number">Enter Integer</label>
   <input type="text" id="number">
-  <input type="button" value="Submit" onlick="roman">
+  <input type="button" value="Submit" onlick="roman()">
   <div id="output"></div>
 </body>
 </html>
